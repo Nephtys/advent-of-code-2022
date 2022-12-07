@@ -11,13 +11,13 @@ public class Day7Test {
     public void shouldBuildTheFileStructure() throws IOException {
         List<String> inputData = Utils.readInputDataToLines("day7-example.txt");
         Directory rootDirectory = new TerminalOutputReader(inputData).readFileStructure().rootDir;
-        assert rootDirectory.name.equals("/");
-        assert rootDirectory.directories.size() == 2;
-        assert rootDirectory.files.size() == 2;
-        assert rootDirectory.directories.get("a").name.equals("a");
-        assert rootDirectory.directories.get("a").directories.get("e").name.equals("e");
-        assert rootDirectory.directories.get("a").files.get(0).name().equals("f");
-        assert rootDirectory.directories.get("a").files.get(0).size() == 29116;
+        assert rootDirectory.name().equals("/");
+        assert rootDirectory.directories().size() == 2;
+        assert rootDirectory.files().size() == 2;
+        assert rootDirectory.directories().get("a").name().equals("a");
+        assert rootDirectory.directories().get("a").directories().get("e").name().equals("e");
+        assert rootDirectory.directories().get("a").files().get(0).name().equals("f");
+        assert rootDirectory.directories().get("a").files().get(0).size() == 29116;
     }
 
     @Test
@@ -25,7 +25,7 @@ public class Day7Test {
         List<String> inputData = Utils.readInputDataToLines("day7-example.txt");
         Directory rootDirectory = new TerminalOutputReader(inputData).readFileStructure().rootDir;
         assert rootDirectory.size() == 48381165;
-        assert rootDirectory.directories.get("a").size() == 94853;
+        assert rootDirectory.directories().get("a").size() == 94853;
     }
 
     @Test
