@@ -21,19 +21,17 @@ public class FileSystem {
     public void changeDirectory(String dir) {
         this.currentDir = switch (dir) {
             case "/" -> this.rootDir;
-            case ".." -> this.currentDir.parentDir;
-            default -> this.currentDir.directories.get(dir);
+            case ".." -> this.currentDir.parentDir();
+            default -> this.currentDir.directories().get(dir);
         };
     }
 
     public void readNewFile(String fileName, int fileSize) {
-        File newFile = new File(fileName, fileSize);
-        this.currentDir.files.add(newFile);
+        this.currentDir.addFile(fileName, fileSize);
     }
 
     public void readNewDir(String dirName) {
-        Directory dir = new Directory(dirName, this.currentDir);
-        this.currentDir.directories.put(dirName, dir);
+        Directory dir = this.currentDir.addDirectory(dirName);
         this.allDirs.add(dir);
     }
 
