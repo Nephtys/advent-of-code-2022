@@ -30,11 +30,6 @@ public class MonkeyBuilder {
         return this;
     }
 
-    public MonkeyBuilder withCommonTestModulo(int commonModulo) {
-        this.monkey.commonModulo = commonModulo;
-        return this;
-    }
-
     public MonkeyBuilder withWorryLevelReducer(Function<Long, Long> worryLevelReducer) {
         this.monkey.worryLevelReducer = worryLevelReducer;
         return this;

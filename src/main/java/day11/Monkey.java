@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.function.Function;
 
 public class Monkey {
-    protected int commonModulo;
     protected int testModulo;
     protected int number;
     protected LinkedList<Long> items;

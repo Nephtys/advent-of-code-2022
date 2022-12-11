@@ -32,7 +32,6 @@ public class Day11 {
                 .toList();
         return builders.stream()
                 .map(monkeyBuilder -> monkeyBuilder
-                        .withCommonTestModulo(commonModulo.get())
                         .withWorryLevelReducer(worry -> switch (exercisePart) {
                             case ONE -> (long) Math.floor(worry / 3f);
                             case TWO -> (long) commonModulo.get() + worry % (long) commonModulo.get();
